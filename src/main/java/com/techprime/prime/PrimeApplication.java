@@ -26,7 +26,7 @@ public class PrimeApplication {
                                 , new Employee(UUID.randomUUID().toString(), "Bip", 10000L))
                                 .forEach(employee -> {
                                     employeeRepository.save(employee)
-                                            .subscribe(System.out::print);
+                                            .subscribe(System.out::println);
                                 });
 
                     });

@@ -1,5 +1,6 @@
 package com.techprime.prime;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.function.Tuple2;
 
+import java.awt.*;
 import java.time.Duration;
 import java.util.Date;
 import java.util.stream.Stream;
@@ -22,7 +24,7 @@ public class Endpoints {
         this.employeeRepository = employeeRepository;
     }
 
-    @GetMapping
+    @GetMapping("/")
     public Flux<Employee> getAll() {
 
         return employeeRepository.findAll();
@@ -35,7 +37,7 @@ public class Endpoints {
         return employeeRepository.findById(id);
     }
 
-    @GetMapping("/{id}/events")
+    @GetMapping(value = "/{id}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<EmpEvent> getEvents(@PathVariable("id") String id) {
 
       return employeeRepository.findById(id)
