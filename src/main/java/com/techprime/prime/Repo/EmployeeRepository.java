@@ -1,5 +1,6 @@
-package com.techprime.prime;
+package com.techprime.prime.Repo;
 
+import com.techprime.prime.POJO.Employee;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 
 public interface EmployeeRepository extends ReactiveMongoRepository<Employee, String> {

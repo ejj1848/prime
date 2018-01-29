@@ -1,5 +1,7 @@
 package com.techprime.prime;
 
+import com.techprime.prime.POJO.Employee;
+import com.techprime.prime.Repo.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

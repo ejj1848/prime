@@ -1,8 +1,7 @@
-package com.techprime.prime;
+package com.techprime.prime.POJO;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.techprime.prime.POJO.Employee;
 
-import javax.annotation.sql.DataSourceDefinition;
 import java.util.Date;
 
 

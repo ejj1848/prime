@@ -1,5 +1,8 @@
-package com.techprime.prime;
+package com.techprime.prime.Rest;
 
+import com.techprime.prime.POJO.EmpEvent;
+import com.techprime.prime.Repo.EmployeeRepository;
+import com.techprime.prime.POJO.Employee;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +12,6 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.function.Tuple2;
 
-import java.awt.*;
 import java.time.Duration;
 import java.util.Date;
 import java.util.stream.Stream;
@@ -40,7 +42,7 @@ public class Endpoints {
     @GetMapping(value = "/{id}/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<EmpEvent> getEvents(@PathVariable("id") String id) {
 
-      return employeeRepository.findById(id)
+        return employeeRepository.findById(id)
                 .flatMapMany(employee -> {
                     Flux<Long> interval = Flux.interval(Duration.ofSeconds(2L));
 

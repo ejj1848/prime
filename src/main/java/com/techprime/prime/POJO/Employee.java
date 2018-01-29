@@ -1,4 +1,4 @@
-package com.techprime.prime;
+package com.techprime.prime.POJO;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
